@@ -1,7 +1,31 @@
 body{
-
+  background-position: center;
+  background-image: url("https://parisapartment.files.wordpress.com/2010/11/6a00d83451cb9a69e200e54f3cb0af8834-800wi.jpg");
+  background-size: cover;
+  margin: 0px auto;
 }
 
 #wrapper{
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 1260px;
+  height: 1260px;
+  margin: 0px auto;
+  padding: 20px;
+  opacity: .85;
+  position: fixed;
+}
 
+#nav{
+  padding: 10px;
+  height: 3%;
+  width: 89%;
+  margin: 2px;
+}
+
+.colum{
+  border: 2px solid rgb(248, 247, 245);
+  float: left;
+  height: 500px;
+  width: 45.2%;
+  position: relative;
 }
