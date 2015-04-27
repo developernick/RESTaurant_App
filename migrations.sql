@@ -1,32 +1,39 @@
 psql
 
-CREATE DATABASE restaurantApp;
+CREATE DATABASE pos_app;
 
-\c restaurantApp
+\c pos_app
 
-CREATE TABLE food (
+CREATE TABLE foods (
   id SERIAL PRIMARY KEY,
   name VARCHAR (255),
   cuisine VARCHAR (255),
-  price VARCHAR (255),
-  allergens VARCHAR (255)
+  allergens VARCHAR (255),
+  price INTEGER
 );
 
-CREATE TABLE party (
+CREATE TABLE parties (
   id SERIAL PRIMARY KEY,
   name VARCHAR (255),
   guests INTEGER,
   paid BOOLEAN
 );
 
-CREATE TABLE table_order (
+CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
-  reciept VARCHAR (255),
-  total INTEGER,
-  table_id INTEGER,
+  party_id INTEGER,
   food_id INTEGER
 );
 
--- SELECT * FROM food;
--- SELECT * FROM party;
--- SELECT * FROM table_order;
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR (255),
+  password_hash VARCHAR (255)
+);
+-- SELECT * FROM foods;
+-- SELECT * FROM parties;
+-- SELECT * FROM orders;
+
+-- INSERT INTO foods(name) VALUES ('Steak');
+-- INSERT INTO foods(name) VALUES ('Dry aged Steak');
+-- INSERT INTO foods(name) VALUES ('Skirt Steak');

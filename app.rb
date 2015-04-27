@@ -3,7 +3,7 @@ Bundler.require()
 # -------------Connection-------------
 ActiveRecord::Base.establish_connection(
   :adapter => 'postgresql',
-  :database => 'restaurantApp'
+  :database => 'pos_app'
 )
 
 # -------------Models-------------
@@ -29,9 +29,8 @@ get '/' do
 end
 
 get '/api/foods' do
-  food = Food.all
   content_type :json
-  food.to_json
+  Food.all.to_json
 end
 
 get '/api/foods/:id' do

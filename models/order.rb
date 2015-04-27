@@ -1,5 +1,4 @@
-class Order < ActiveRecord::Base
-  def to_s
-    self.to_s + "Order Class Active"
-  end
+class Order < ActiveRecord:: Base
+  belongs_to :foods
+  belongs_to :parties
 end

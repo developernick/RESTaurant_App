@@ -1,5 +1,4 @@
-class Party < ActiveRecord::Base
-  def to_s
-    self.to_s + "Party Class Active"
-  end
+class Party < ActiveRecord:: Base
+  has_many :foods, through => :orders
+  has_many :orders
 end
