@@ -4,6 +4,13 @@ class FoodsController < Sinatra::Base
 
   # -_-_-_-_-_-_-_-_-_- Helper -_-_-_-_-_-_-_-_-_-
 
+  def food_params
+    return params[:food] if params[:food]
+    body_data = {}
+    @request_body ||= request.body.read.to_s
+    body_data = (JSON(@request_body))unless @request_body.empty?
+    body_data = body_data[:food] || body_data
+  end
 
   # -_-_-_-_-_-_-_-_-_- Routes -_-_-_-_-_-_-_-_-_-
 

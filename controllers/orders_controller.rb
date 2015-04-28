@@ -3,7 +3,12 @@ class OrdersController < Sinatra::Base
   helpers Sinatra::SessionHelper
 
   # -_-_-_-_-_-_-_-_-_- Helper -_-_-_-_-_-_-_-_-_-
-
+  def order_params
+    return params[:orders] if params[:orders]
+    body_data = {}
+    @request_body ||= request.body.read.to_s
+    body_data = (JSON(@request_body))unless @request_body.empty?
+    body_data = body_data[:orders] || body_data
 
   # -_-_-_-_-_-_-_-_-_- Routes -_-_-_-_-_-_-_-_-_-
   # Order Routes tested all 200 ok
