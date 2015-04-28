@@ -15,7 +15,7 @@ CREATE TABLE foods (
 CREATE TABLE parties (
   id SERIAL PRIMARY KEY,
   name VARCHAR (255),
-  guests INTEGER,
+  table_number INTEGER,
   paid BOOLEAN
 );
 
