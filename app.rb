@@ -1,3 +1,10 @@
+# app.rb is obsolite. make collections for all routes. move connections, gems, models to config.ru and add collection routes.
+
+# Collections need a welcome collection to show index.erb
+
+# build Session Collection to athenticate users that are allowed to make changes to the menu
+
+
 require 'bundler'
 Bundler.require()
 # -------------Connection-------------
