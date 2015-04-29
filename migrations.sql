@@ -8,15 +8,13 @@ CREATE TABLE foods (
   id SERIAL PRIMARY KEY,
   name VARCHAR (255),
   cuisine VARCHAR (255),
-  allergens VARCHAR (255),
-  price INTEGER
+  cents INTEGER
 );
 
 CREATE TABLE parties (
   id SERIAL PRIMARY KEY,
-  name VARCHAR (255),
   table_number INTEGER,
-  paid BOOLEAN
+  is_paid BOOLEAN
 );
 
 CREATE TABLE orders (
