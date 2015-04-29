@@ -1,6 +1,6 @@
 class SessionsController < Sinatra::Base
   enable :sessions
-  helper Sinatra::SessionHelper
+  helpers Sinatra::SessionHelper
   use Rack::MethodOverride
 
 

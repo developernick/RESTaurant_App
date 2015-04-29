@@ -1,6 +1,6 @@
 class FoodsController < Sinatra::Base
   enable :sessions
-  helper Sinatra::SessionHelper
+  helpers Sinatra::SessionHelper
 
   # -_-_-_-_-_-_-_-_-_- Helper -_-_-_-_-_-_-_-_-_-
   def food_params
@@ -16,7 +16,7 @@ class FoodsController < Sinatra::Base
   #   binding.pry
   # end
 
-  
+
   # -_-_-_-_-_-_-_-_-_- Routes -_-_-_-_-_-_-_-_-_-
     # Tested food routes all 200 ok
   get '/api/foods' do

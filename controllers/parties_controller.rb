@@ -1,6 +1,6 @@
 class PartiesController < Sinatra::Base
   enable :sessions
-  helper Sinatra::SessionHelper
+
 
   # -_-_-_-_-_-_-_-_-_- Helper -_-_-_-_-_-_-_-_-_-
   def party_params

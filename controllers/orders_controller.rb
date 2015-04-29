@@ -1,6 +1,6 @@
 class OrdersController < Sinatra::Base
   enable :sessions
-  helpers Sinatra::SessionHelper
+
 
   # -_-_-_-_-_-_-_-_-_- Helper -_-_-_-_-_-_-_-_-_-
   def order_params
@@ -17,7 +17,7 @@ class OrdersController < Sinatra::Base
   #   binding.pry
   # end
 
-  
+
   # -_-_-_-_-_-_-_-_-_- Routes -_-_-_-_-_-_-_-_-_-
   # Order Routes tested all 200 ok
   get '/api/orders' do
