@@ -3,7 +3,6 @@ class FoodsController < Sinatra::Base
   helper Sinatra::SessionHelper
 
   # -_-_-_-_-_-_-_-_-_- Helper -_-_-_-_-_-_-_-_-_-
-
   def food_params
     return params[:food] if params[:food]
     body_data = {}
@@ -12,8 +11,13 @@ class FoodsController < Sinatra::Base
     body_data = body_data[:food] || body_data
   end
 
-  # -_-_-_-_-_-_-_-_-_- Routes -_-_-_-_-_-_-_-_-_-
+  ##   ***** Debugging *****
+  # get '/pry' do
+  #   binding.pry
+  # end
 
+  
+  # -_-_-_-_-_-_-_-_-_- Routes -_-_-_-_-_-_-_-_-_-
     # Tested food routes all 200 ok
   get '/api/foods' do
     content_type :json

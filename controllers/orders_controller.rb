@@ -7,9 +7,17 @@ class OrdersController < Sinatra::Base
     return params[:orders] if params[:orders]
     body_data = {}
     @request_body ||= request.body.read.to_s
-    body_data = (JSON(@request_body))unless @request_body.empty?
-    body_data = body_data[:orders] || body_data
+    body_data = (JSON(@request_body)) unless @request_body.empty?
+    body_data = body_data['order'] || body_data
+  end
 
+
+  ##   ***** Debugging *****
+  # get '/pry' do
+  #   binding.pry
+  # end
+
+  
   # -_-_-_-_-_-_-_-_-_- Routes -_-_-_-_-_-_-_-_-_-
   # Order Routes tested all 200 ok
   get '/api/orders' do

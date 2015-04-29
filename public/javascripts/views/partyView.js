@@ -1,5 +1,43 @@
 var app = app || {}
 
+
+app.PartyView = Backbone.view.extend({
+
+  initialize: function () {
+    this.listenTo(this.model, 'change', this.render)
+  },
+
+  template: _.template('<p><%= table_number %></p>'),
+
+  render: function () {
+    var data - this.model.attributes;
+    var renderHTML = this.template( data );
+    this.$el.html( renderHTML );
+
+    var foods = this.model.get('foods');//assume 'foods' was included in the parties
+    var foodList= $('<ul>');
+    for (var i = 0; i < foods.length; i++) {
+      var foodItem = foods[i];
+      var newLi = $('<li>').html(foodItem.name);
+      foodList.append(newLi);
+    }
+  },
+  <li class= 'party'>
+    <p>
+      3
+    </p>
+    <ul>
+      <li>foodName</li>
+      <li>foodName</li>
+      <li>foodName</li>
+    </ul>
+  </li>
+})
+
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+var app = app || {}
+
 app.partyView = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.model,'change', this.render);
@@ -33,5 +71,5 @@ app.partyView = Backbone.View.extend({
     this.$el.addClass('party-selected');
     app.partySelection = this.model;
   }
-  
+
 });
