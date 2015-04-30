@@ -28,11 +28,12 @@ CREATE TABLE users (
   username VARCHAR (255),
   password_hash VARCHAR (255)
 );
-SELECT * FROM foods;
-SELECT * FROM parties;
-SELECT * FROM orders;
-SELECT * FROM users;
 
-INSERT INTO foods(name) VALUES ('Steak');
-INSERT INTO foods(name) VALUES ('Dry aged Steak');
-INSERT INTO foods(name) VALUES ('Skirt Steak');
+-- SELECT * FROM foods;
+-- SELECT * FROM parties;
+-- SELECT * FROM orders;
+-- SELECT * FROM users;
+
+-- INSERT INTO foods(name) VALUES ('Steak');
+-- INSERT INTO foods(name) VALUES ('Dry aged Steak');
+-- INSERT INTO foods(name) VALUES ('Skirt Steak');

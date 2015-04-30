@@ -30,7 +30,7 @@ namespace :db do
     food_middle = ['Chicken', 'Steak', 'Salmon', 'Ahi Tuna', 'Lamb']
     food_end = ['Salad', 'Sandwhich', 'Entree', 'Fillet']
     cuisines =['Merikan', 'Italian', 'Greek', 'BBQ' ]
-    rand(5..15)times do
+    rand(5..15).times do
       Food.create({
         name: ( food_start.sample + ' ' + food_middle.sample + ' ' + food_end.sample),
         cuisine: cuisines.sample,
@@ -50,10 +50,10 @@ namespace :db do
       # Generate Orders
       parties = Party.all
       foods = Food.all
-      rand(10..35)times do |num|
+      rand(10..35).times do |num|
         Order.create({
-        party:parties.sample,
-        food: foods.sample
+        party_id: parties.sample,
+        food_id: foods.sample
         })
       end
   end # junk_data end

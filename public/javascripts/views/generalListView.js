@@ -14,5 +14,6 @@ app.GeneralListView = Backbone.View.extend({
       this.$el.append( subView.$el );
       subView.delegateEvents();
     }
+    return this;
   }
 });
