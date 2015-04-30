@@ -18,7 +18,7 @@ $(document).ready(function(){
   });
 
   app.partyListPainter = new app.GeneralListView({
-    modelView: app.PartyView,
+    modelView: app.partyView,
     collection: app.parties,
     el: $('#party-list'),
   });
