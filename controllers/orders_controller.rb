@@ -20,38 +20,38 @@ class OrdersController < Sinatra::Base
 
   # -_-_-_-_-_-_-_-_-_- Routes -_-_-_-_-_-_-_-_-_-
   # Order Routes tested all 200 ok
-  get '/api/orders' do
+  get '/' do
     content_type :json
     Order.all.to_json
   end
 
-  get '/api/orders/:id' do
+  get '/:id' do
     order = Order.find(params[:id].to_i)
     content_type :json
     order.to_json
   end
 
-  post '/api/orders' do
+  post '/' do
     content_type :json
     order = Order.create(params[:order])
     order.to_json
   end
 
-  put '/api/orders/:id' do
+  put '/:id' do
     order = Order.find(params[:id].to_i)
     order.update(params[:order])
     content_type :json
     order.to_json
   end
 
-  patch '/api/orders/:id' do
+  patch '/:id' do
     content_type :json
     order = Order.find(params[:id].to_i)
     order.update(params[:order])
     order.to_json
   end
 
-  delete '/api/orders/:id' do
+  delete '/:id' do
     content_type :json
     Order.delete(params[:id].to_i)
     {message: "Order has been removed"}

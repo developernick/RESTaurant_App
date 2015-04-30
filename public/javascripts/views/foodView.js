@@ -7,7 +7,7 @@ app.FoodView = Backbone.View.extend({
   },
   tagName: 'li',
   className: 'food',
-  template: _.template('<h3><%= name %></h3><p><%= cents %></p><button class="select-food">Select</button>')
+  template: _.template('<h3><%= name %></h3><p><%= cents %></p><button class="select-food">Select</button>'),
 
   render: function () {
     this.$el.append(this.template(this.model.attributes));

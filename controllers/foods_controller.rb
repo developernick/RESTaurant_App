@@ -19,38 +19,38 @@ class FoodsController < Sinatra::Base
 
   # -_-_-_-_-_-_-_-_-_- Routes -_-_-_-_-_-_-_-_-_-
     # Tested food routes all 200 ok
-  get '/api/foods' do
+  get '/' do
     content_type :json
     Food.all.to_json
   end
 
-  get '/api/foods/:id' do
+  get '/:id' do
     food = Food.find(params[:id].to_i)
     content_type :json
     food.to_json
   end
 
-  post '/api/foods' do
+  post '/' do
     food = Food.create(params[:food])
     content_type :json
     food.to_json
   end
 
-  patch '/api/foods/:id' do
+  patch '/:id' do
     food = Food.find(params[:id].to_i)
     food.update(params[:food])
     content_type :json
     food.to_json
   end
 
-  put '/api/foods/:id' do
+  put '/:id' do
     food = Food.find(params[:id].to_i)
     food.update(params[:food])
     content_type :json
     food.to_json
   end
 
-  delete '/api/foods/:id' do
+  delete '/:id' do
     Food.delete(params[:id].to_i)
     content_type :json
     {message: "Food item has been removed."}.to_json
