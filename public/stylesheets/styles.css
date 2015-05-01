@@ -4,16 +4,14 @@ body{
   background-image: url("https://parisapartment.files.wordpress.com/2010/11/6a00d83451cb9a69e200e54f3cb0af8834-800wi.jpg");
   background-size: cover;
   margin: 0px auto;
-  /* padding: 0px; */
+  padding: 0px;
 }
-div{
-  overflow:auto;
 
-}
 li{
   display: inline;
-
+  align-content: center;
 }
+
 button{
   color: rgba(63, 33, 7, 0.76);
   background-color: rgba(122, 157, 151, 0.73);
@@ -39,21 +37,22 @@ button:focus{
   position: relative;
 }
 #nav{
-  padding: 10px;
+  padding: 0px;
   height: 10%;
-  width: 90%;
+  width: 80%;
   margin: 5px auto;
-
 }
-#menu_list{
+#menu_list {
   width: 25%;
 }
-#party_list{
+
+#party_list {
   height: 50%;
   width: 40%;
 
 }
-#order_list{
+
+#order_list {
   width: 425px;
   height: 100%;
 }
@@ -83,6 +82,7 @@ div{
 }
 
 .food-selected, .party-selected{
+  font-weight: bold;
   color: black;
   background-color: rgba(71, 178, 173, 1);
 }
