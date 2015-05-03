@@ -23,29 +23,35 @@ namespace :db do
     user.save!
   end
 
-  desc 'Fill Database with Junk Data'
-  task :junk_data do
+  desc 'Fill Database with Foods'
+  task :food_data do
 
-    food_start = ['Thai', 'Chicago', 'Smoked', 'BBQ', 'Dry Aged']
-    food_middle = ['Chicken', 'Steak', 'Salmon', 'Ahi Tuna', 'Lamb']
-    food_end = ['Salad', 'Sandwhich', 'Entree', 'Fillet']
-    cuisines =['Merikan', 'Italian', 'Greek', 'BBQ' ]
+    food_start = ['New York', 'Chicago', 'Smoked', 'BBQ', 'Dry Aged']
+    food_end = ['Steak', 'Venison', 'Bacon', 'Eggs', 'Fish(Game Only)']
+    cuisines =['Meat', 'Game', 'BBQ' ]
     rand(5..15).times do
       Food.create({
-        name: ( food_start.sample + ' ' + food_middle.sample + ' ' + food_end.sample),
+        name: ( food_start.sample + ' ' + food_end.sample),
         cuisine: cuisines.sample,
         cents: rand(500..2000)
         })
       end
+  end
+
+  desc 'Fill Database with Parties'
+  task :party_data do
 
       # Generate Parties
-      rand(5..15).times do |num|
+      rand(10..20).times do |num|
         Party.create({
-          table_number: num,
+          table_number: (num + 1),
           is_paid: [true, false, false].sample
         })
       end
+  end
 
+  desc 'Fill Database with Orders'
+  task :orders_data do
 
       # Generate Orders
       parties = Party.all
@@ -55,8 +61,8 @@ namespace :db do
         party_id: parties.sample,
         food_id: foods.sample
         })
-      end
-  end # junk_data end
+        end
+  end
 
   desc "Empty Database"
   task :empty do
